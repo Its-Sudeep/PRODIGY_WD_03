@@ -1,17 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #2d6ea8;; /* Add your background image here */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
 .container {
     text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .board {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-gap: 2px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
     border: 2px solid black;
     margin-bottom: 20px;
 }
 
 .cell {
-    margin-left: 600px;
     width: 100px;
     height: 100px;
     display: flex;
@@ -33,4 +53,12 @@ button {
     margin: 0 auto; /* Center horizontally */
     text-align: center; /* Center text within the box */
     margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .cell {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5em;
+    }
 }
