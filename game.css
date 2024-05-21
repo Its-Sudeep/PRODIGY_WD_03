@@ -1,0 +1,36 @@
+.container {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 2px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.cell {
+    margin-left: 600px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+button {
+    font-size: 1em;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#stats {
+    display: inline-block;
+    margin: 0 auto; /* Center horizontally */
+    text-align: center; /* Center text within the box */
+    margin-bottom: 20px;
+}
