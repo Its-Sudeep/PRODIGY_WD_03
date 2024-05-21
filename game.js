@@ -2,6 +2,8 @@ let currentPlayer = "X";
 let board = ["", "", "", "", "", "", "", "", ""];
 let gameEnded = false;
 let movesMade = 0;
+let scoreX = 0;
+let scoreO = 0;
 
 function handleClick(event) {
     if (gameEnded) return;
@@ -14,6 +16,7 @@ function handleClick(event) {
         document.getElementById("movesMade").innerText = movesMade;
         if (checkWinner()) {
             document.getElementById("status").innerText = "Player " + currentPlayer + " wins!";
+            updateScore();
             gameEnded = true;
         } else if (!board.includes("")) {
             document.getElementById("status").innerText = "It's a draw!";
@@ -46,4 +49,14 @@ function resetGame() {
     document.getElementById("status").innerText = "";
     document.getElementById("currentPlayer").innerText = currentPlayer;
     document.getElementById("movesMade").innerText = movesMade;
+}
+
+function updateScore() {
+    if (currentPlayer === "X") {
+        scoreX++;
+        document.getElementById("scoreX").innerText = scoreX;
+    } else {
+        scoreO++;
+        document.getElementById("scoreO").innerText = scoreO;
+    }
 }
